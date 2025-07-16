@@ -75,6 +75,10 @@ main#grid {
   scroll-behavior: smooth;
 }
 
+section {
+  min-width: 220px;
+  flex-shrink: 0; /* <- evita que se achiquen cuando se hace scroll horizontal */
+}
 
 section {
   background: #fff;
