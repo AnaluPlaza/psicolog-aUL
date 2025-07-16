@@ -1,0 +1,151 @@
+
+:root {
+  --orange-light: #ffba66;
+  --orange: #fca311;
+  --orange-dark: #d88500;
+  --bg: #faf7f7;
+  --locked: #dadada;
+  --text: #222;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: var(--orange);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#instrucciones {
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 1rem;
+  font-weight: 500;
+  max-width: 600px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--orange);
+  color: white;
+}
+
+footer button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background: white;
+  border: none;
+  color: var(--orange-dark);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+footer button:hover {
+  background: var(--orange-dark);
+  color: white;
+}
+
+main#grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+  overflow-x: auto;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+section {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--orange);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 1rem;
+  background: var(--locked);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.curso {
+  width: 100%;
+  border: 2px solid var(--orange-dark);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background: var(--locked);
+  transition: 0.3s ease all;
+  position: relative;
+  cursor: not-allowed;
+  margin-bottom: 1rem;
+}
+
+.curso h3 {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.curso small {
+  display: none;
+}
+
+.curso[data-state="unlocked"] {
+  background: var(--orange);
+  color: #fff;
+  cursor: pointer;
+}
+
+.curso[data-state="completed"] {
+  background: var(--orange-dark);
+  color: #fff;
+}
+
+.curso[data-state="completed"] h3 {
+  text-decoration: line-through;
+}
+
+.curso[data-state="locked"] {
+  opacity: 0.6;
+}
+
+.curso:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  main#grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
