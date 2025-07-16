@@ -66,14 +66,15 @@ footer button:hover {
 }
 
 main#grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 1rem;
   padding: 2rem;
   overflow-x: auto;
   min-height: 100vh;
   scroll-behavior: smooth;
 }
+
 
 section {
   background: #fff;
