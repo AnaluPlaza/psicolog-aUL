@@ -86,8 +86,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 260px;     /* 🔒 Ancho fijo mínimo por columna */
-  max-width: 260px;
+  min-width: 220px;     /* 🔒 Ancho fijo mínimo por columna */
+  max-width: 220px;
   flex-shrink: 0;        /* ❌ No se achican */
 }
 
